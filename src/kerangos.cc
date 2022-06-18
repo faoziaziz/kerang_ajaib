@@ -4,6 +4,11 @@
 #include<string.h>
 #define DEBUG_MODE 1
 
+
+
+
+void command(std::string cmd);
+
 int main(){
 
 
@@ -23,9 +28,24 @@ int main(){
       std::cout<<"> ";
       getline(std::cin, y);
       std::cout<<"output : "<<y<<std::endl;
+      command(y);
     }
   
 
   return 0;
+
+}
+
+
+void command(std::string cmd){
+
+  /* bandingkan cmd dengan thread */
+  std::string biasa_saja="pacar";
+
+
+  if(cmd.compare(biasa_saja)==0){
+    std::cout<<"I love you"<<std::endl;
+  }
+  
 
 }
