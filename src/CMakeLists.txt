@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
+project(KerangOS)
+set(CMAKE_CXX_STANDARD CXX)
+set(CMAKE_CXX_COMPILER "/usr/bin/g++")
+add_executable(KerangOS kerangos.cc)
+install (TARGETS KerangOS DESTINATION bin)
