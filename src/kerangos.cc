@@ -1,19 +1,13 @@
-#include<iostream>
-#include<cstring>
-#include<stdlib.h>
-#include<string.h>
-#define DEBUG_MODE 1
-
-
-
-
-void command(std::string cmd);
+#include "kerangos.h"
 
 int main(){
 
+  Kerang kerang_obj;
 
   /* local variable */
   std::string y;
+
+  /* kerang shell should pointed to Kerang.shell*/
 
   /* inputan mantap */
   std::cout<<"Kerang OS : Kerang Ajaib "<<std::endl;
@@ -22,30 +16,25 @@ int main(){
   std::cout<<"Check "<<std::endl;
 #endif
 
-  
+  /* main program */
   while(1)
     {
-      std::cout<<"> ";
+      std::cout<<kerang_obj.shell;
       getline(std::cin, y);
       std::cout<<"output : "<<y<<std::endl;
+      kerang_obj.setShell(y);
       command(y);
     }
   
-
   return 0;
 
 }
 
+void Kerang::setShell(std::string cmd){
 
-void command(std::string cmd){
-
-  /* bandingkan cmd dengan thread */
-  std::string biasa_saja="pacar";
-
-
-  if(cmd.compare(biasa_saja)==0){
-    std::cout<<"I love you"<<std::endl;
-  }
-  
+  /* default cmd */
+  shell=cmd;
+  shell=cmd+" > ";
 
 }
+
