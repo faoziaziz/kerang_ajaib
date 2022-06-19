@@ -6,7 +6,8 @@ set(CMAKE_CXX_COMPILER "/usr/bin/g++")
 
 find_package(Threads)
 find_package(json-c CONFIG)
+find_package(curl CONFIG)
 
 add_executable(KerangOS kerangos.cc commands.cc)
-TARGET_LINK_LIBRARIES(KerangOS pthread json-c::json-c)
+TARGET_LINK_LIBRARIES(KerangOS pthread json-c::json-c curl)
 install (TARGETS KerangOS DESTINATION bin)
